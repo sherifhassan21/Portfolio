@@ -8,8 +8,13 @@ export default function ProjectDetails() {
   if (!project) return <section className="mx-auto max-w-5xl px-6 py-24"><h1 className="text-4xl font-bold">Project not found</h1><Link to="/projects" className="mt-6 inline-block text-blue-400">Back to projects</Link></section>
   const sections = [
     ['The challenge', project.challenge],
-    ['My approach', project.approach],
+    ['Project objective', project.objective],
+    ['My role and responsibilities', project.responsibilities],
+    ['The approach', project.approach],
+    ['Scope and deliverables', project.scope],
+    ['People and stakeholders', project.stakeholders],
     ['Business outcome', project.impact],
+    ['Lessons learned', project.lessons],
   ]
   return <article className="mx-auto max-w-5xl px-6 py-16 md:py-24">
     <Link to="/projects" className="inline-flex items-center gap-2 text-blue-300"><ArrowLeft size={17}/> All projects</Link>
@@ -21,6 +26,6 @@ export default function ProjectDetails() {
       <div><span className="text-slate-400">Company:</span> {project.company}</div>
       <div><span className="text-slate-400">Technology:</span> {project.technologies}</div>
     </div>
-    <div className="mt-12 grid gap-6 md:grid-cols-2">{sections.map(([title,body])=><section key={title} className="rounded-xl border border-white/10 bg-white/[.03] p-6"><h2 className="text-xl font-semibold text-white">{title}</h2><p className="mt-4 leading-7 text-slate-300">{body}</p></section>)}</div>
+    <div className="mt-12 grid gap-6 md:grid-cols-2">{sections.filter(([,body])=>Boolean(body)).map(([title,body])=><section key={title} className="rounded-xl border border-white/10 bg-white/[.03] p-6"><h2 className="text-xl font-semibold text-white">{title}</h2><p className="mt-4 leading-7 text-slate-300">{body}</p></section>)}</div>
   </article>
 }
