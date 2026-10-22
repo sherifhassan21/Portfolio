@@ -41,13 +41,12 @@ jobs:
           cp react-app/dist/index.html index.html
           rm -rf assets
           cp -R react-app/dist/assets assets
-          if [ -d react-app/dist/icons ]; then cp -R react-app/dist/icons icons; fi
-          if [ -f react-app/dist/favicon.svg ]; then cp react-app/dist/favicon.svg favicon.svg; fi
+          cp -R react-app/dist/. ./
       - name: Commit compiled site for Cloudflare Pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html assets favicon.svg
+          git add -A index.html assets '*.png' '*.svg'
           if git diff --cached --quiet; then
             echo "No website output changes"
           else
