@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Career from './pages/Career'
 import Projects from './pages/Projects'
+import ProjectDetails from './pages/ProjectDetails'
 import CaseStudies from './pages/CaseStudies'
 import Education from './pages/Education'
 import Leadership from './pages/Leadership'
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/career" element={<Career />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/education" element={<Education />} />
           <Route path="/leadership" element={<Leadership />} />
