@@ -1,7 +1,8 @@
-export type Project = {id:string; slug:string; title:string; company:string; category:string; summary:string; challenge:string; approach:string; impact:string; technologies:string};
+export type Project = {id:string; slug:string; title:string; company:string; category:string; summary:string; challenge:string; approach:string; impact:string; technologies:string; image?:string};
 export const projects: Project[] = [
   {
     "id": "P001",
+    "image": "/01_Odoo_ERP_Transformation.png",
     "slug": "enterprise-odoo-erp-transformation",
     "title": "Enterprise Odoo ERP Transformation",
     "company": "Shadwan International Co.",
@@ -14,6 +15,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P002",
+    "image": "/02_Data_Center_Modernization.png",
     "slug": "centralized-data-center-modernization",
     "title": "Centralized Data Center Modernization",
     "company": "Shadwan International Co.",
@@ -26,6 +28,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P003",
+    "image": "/04_Network_Standardization.png",
     "slug": "enterprise-network-standardization",
     "title": "Enterprise Network Standardization",
     "company": "Shadwan International Co.",
@@ -38,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P004",
+    "image": "/05_Endpoint_Security.png",
     "slug": "endpoint-security-enhancement-with-edr",
     "title": "Endpoint Security Enhancement with EDR",
     "company": "Shadwan International Co.",
@@ -50,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P005",
+    "image": "/03_3CX_Telecommunications.png",
     "slug": "3cx-telecommunications-cost-optimization",
     "title": "3CX Telecommunications Cost Optimization",
     "company": "Shadwan International Co.",
@@ -62,6 +67,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P006",
+    "image": "/14_IT_Project_Governance.png",
     "slug": "it-governance-performance-framework",
     "title": "IT Governance & Performance Framework",
     "company": "Shadwan International Co.",
@@ -74,6 +80,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P007",
+    "image": "/06_IT_Service_Management.png",
     "slug": "it-service-management-team-development",
     "title": "IT Service Management & Team Development",
     "company": "Shadwan International Co.",
@@ -86,6 +93,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P008",
+    "image": "/07_AI_Sales_Agent.png",
     "slug": "ai-sales-agent",
     "title": "AI Sales Agent",
     "company": "Shadwan International Co.",
@@ -98,6 +106,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P009",
+    "image": "/08_HR_Onboarding_Automation.png",
     "slug": "ai-hr-onboarding-system",
     "title": "AI HR Onboarding System",
     "company": "Shadwan International Co.",
@@ -110,6 +119,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P010",
+    "image": "/12_E_Invoicing.png",
     "slug": "egyptian-e-invoicing-transformation",
     "title": "Egyptian E-Invoicing Transformation",
     "company": "Majid Al Futtaim",
@@ -134,6 +144,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P012",
+    "image": "/13_Retail_Store_Deployments.png",
     "slug": "store-openings",
     "title": "Store Openings",
     "company": "LC WAIKIKI",
@@ -146,6 +157,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P014",
+    "image": "/16_Network_Infrastructure_Upgrade.png",
     "slug": "academy-wired-network-infrastructure-upgrade",
     "title": "Academy Wired-Network Infrastructure Upgrade",
     "company": "Future Academy",
@@ -158,6 +170,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P015",
+    "image": "/17_Desktop_Virtualization.png",
     "slug": "laboratory-desktop-virtualization-deployment",
     "title": "Laboratory Desktop Virtualization Deployment",
     "company": "Future Academy",
@@ -170,6 +183,7 @@ export const projects: Project[] = [
   },
   {
     "id": "P016",
+    "image": "/18_IT_Asset_Management.png",
     "slug": "it-asset-tracking-inventory-controls",
     "title": "IT Asset Tracking & Inventory Controls",
     "company": "Future Academy",
