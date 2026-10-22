@@ -25,7 +25,7 @@ export default function Projects() {
     <p className="mt-5 text-sm text-slate-400">{filtered.length} projects</p>
     <div className="mt-5 grid gap-6 md:grid-cols-2 xl:grid-cols-3">{filtered.map(p=><Link to={`/projects/${p.slug}`} key={p.id} className="group flex overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:-translate-y-1 hover:border-blue-400/60">
       <article className="flex w-full flex-col">
-        <div className="flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-[#203b65] to-[#0c162b]"><FolderKanban size={48} className="text-blue-300"/></div>
+        <div className="flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-[#203b65] to-[#0c162b]">{p.image ? <img src={p.image} alt={`Illustration for ${p.title}`} loading="lazy" className="h-full w-full object-cover object-top" /> : <FolderKanban size={48} className="text-blue-300"/>}</div>
         <div className="flex flex-1 flex-col p-6">
           <span className="text-xs font-semibold uppercase tracking-wide text-blue-400">{p.category}</span>
           <h2 className="mt-3 text-xl font-semibold text-white">{p.title}</h2>
