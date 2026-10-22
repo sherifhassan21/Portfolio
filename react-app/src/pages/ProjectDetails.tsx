@@ -1,20 +1,34 @@
 import { Link, useParams } from 'react-router'
 import { ArrowLeft } from 'lucide-react'
 import { projects } from '../data/portfolioProjects'
+import { projectMetadata } from '../data/projectMetadata'
 
 export default function ProjectDetails() {
   const { slug } = useParams()
   const project = projects.find(p => p.slug === slug)
   if (!project) return <section className="mx-auto max-w-5xl px-6 py-24"><h1 className="text-4xl font-bold">Project not found</h1><Link to="/projects" className="mt-6 inline-block text-blue-400">Back to projects</Link></section>
-  const sections = [
-    ['The challenge', project.challenge],
-    ['Project objective', project.objective],
-    ['My role and responsibilities', project.responsibilities],
-    ['The approach', project.approach],
-    ['Scope and deliverables', project.scope],
-    ['People and stakeholders', project.stakeholders],
-    ['Business outcome', project.impact],
-    ['Lessons learned', project.lessons],
+  const meta = projectMetadata[project.id]
+  const fields = [
+    ['Project ID', project.id],
+    ['Project Name', project.title],
+    ['Short Description (1–2 lines)', project.summary],
+    ['Company / Organization', project.company],
+    ['Business Unit / Location', meta?.businessUnit],
+    ['Start Date', meta?.startDate],
+    ['End Date', meta?.endDate],
+    ['Status', meta?.status],
+    ['Category', meta?.originalCategory || project.category],
+    ['My Role / Title', meta?.role],
+    ['My Responsibilities & Decisions', project.responsibilities],
+    ['Business Problem / Challenge', project.challenge],
+    ['Project Objective', project.objective],
+    ['Solution / Approach', project.approach],
+    ['Project Scope & Deliverables', project.scope],
+    ['Technology / Tools', project.technologies],
+    ['Team & Stakeholders', project.stakeholders],
+    ['Business Value / ROI', project.highlights || project.impact],
+    ['Outcome / Results Summary', project.impact],
+    ['Key Lessons Learned', project.lessons],
   ]
   return <article className="mx-auto max-w-5xl px-6 py-16 md:py-24">
     <Link to="/projects" className="inline-flex items-center gap-2 text-blue-300"><ArrowLeft size={17}/> All projects</Link>
@@ -22,10 +36,13 @@ export default function ProjectDetails() {
     <h1 className="mt-4 text-4xl font-bold leading-tight text-white md:text-6xl">{project.title}</h1>
     <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{project.summary}</p>
     {project.image && <img src={project.image} alt={`Illustration for ${project.title}`} className="mt-10 w-full rounded-2xl border border-white/10 object-cover" />}
-    <div className="mt-8 grid gap-4 rounded-xl border border-white/10 bg-white/5 p-6 text-sm sm:grid-cols-2">
-      <div><span className="text-slate-400">Company:</span> {project.company}</div>
-      <div><span className="text-slate-400">Technology:</span> {project.technologies}</div>
+    <h2 className="mt-12 text-2xl font-bold">Complete project profile</h2>
+    <p className="mt-2 text-sm text-slate-400">Fields requiring confirmation are marked clearly instead of being invented.</p>
+    <div className="mt-6 grid gap-4 md:grid-cols-2">
+      {fields.map(([label,value]) => <section key={label} className="rounded-xl border border-white/10 bg-white/[.04] p-5">
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-blue-300">{label}</h3>
+        <p className={`mt-3 whitespace-pre-line leading-7 ${value ? 'text-slate-200' : 'italic text-amber-300'}`}>{value || 'To be confirmed'}</p>
+      </section>)}
     </div>
-    <div className="mt-12 grid gap-6 md:grid-cols-2">{sections.filter(([,body])=>Boolean(body)).map(([title,body])=><section key={title} className="rounded-xl border border-white/10 bg-white/[.03] p-6"><h2 className="text-xl font-semibold text-white">{title}</h2><p className="mt-4 leading-7 text-slate-300">{body}</p></section>)}</div>
   </article>
 }
