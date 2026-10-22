@@ -37,11 +37,11 @@ export default function ProjectDetails() {
     <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{project.summary}</p>
     {project.image && <img src={project.image} alt={`Illustration for ${project.title}`} className="mt-10 w-full rounded-2xl border border-white/10 object-cover" />}
     <h2 className="mt-12 text-2xl font-bold">Complete project profile</h2>
-    <p className="mt-2 text-sm text-slate-400">Fields requiring confirmation are marked clearly instead of being invented.</p>
+    <p className="mt-2 text-sm text-slate-400">All available project information is displayed below. Fields without source data remain empty.</p>
     <div className="mt-6 grid gap-4 md:grid-cols-2">
       {fields.map(([label,value]) => <section key={label} className="rounded-xl border border-white/10 bg-white/[.04] p-5">
         <h3 className="text-xs font-semibold uppercase tracking-wide text-blue-300">{label}</h3>
-        <p className={`mt-3 whitespace-pre-line leading-7 ${value ? 'text-slate-200' : 'italic text-amber-300'}`}>{value || 'To be confirmed'}</p>
+        <p className={`mt-3 whitespace-pre-line leading-7 ${value ? 'text-slate-200' : 'text-slate-400'}`}>{value || ''}</p>
       </section>)}
     </div>
   </article>
