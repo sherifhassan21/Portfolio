@@ -1,0 +1,77 @@
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router'
+import { Menu, X } from 'lucide-react'
+
+const links = [
+  { title: 'Home', to: '/' },
+  { title: 'About', to: '/about' },
+  { title: 'Career', to: '/career' },
+  { title: 'Projects', to: '/projects' },
+  { title: 'Case Studies', to: '/case-studies' },
+  { title: 'Leadership', to: '/leadership' },
+  { title: 'Business Impact', to: '/business-impact' },
+  { title: 'Education', to: '/education' },
+  { title: 'Insights', to: '/insights' },
+  { title: 'Recognition', to: '/recognition' },
+]
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0B1528]/95 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <Link to="/" className="text-2xl font-bold tracking-tight text-white">
+          SM<span className="text-blue-400">.</span>
+        </Link>
+
+        <div className="hidden items-center gap-6 lg:flex">
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `text-xs font-medium transition-colors hover:text-blue-400 ${
+                  isActive ? 'text-blue-400' : 'text-slate-300'
+                }`
+              }
+            >
+              {link.title}
+            </NavLink>
+          ))}
+          <Link
+            to="/contact"
+            className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500"
+          >
+            Let's Connect
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="text-white lg:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded={open}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="border-t border-white/10 bg-[#0B1528] px-6 py-4 lg:hidden">
+          {[...links, { title: 'Contact', to: '/contact' }].map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              onClick={() => setOpen(false)}
+              className="block rounded-lg px-3 py-3 text-sm text-slate-200 hover:bg-white/10"
+            >
+              {link.title}
+            </NavLink>
+          ))}
+        </div>
+      )}
+    </header>
+  )
+}
