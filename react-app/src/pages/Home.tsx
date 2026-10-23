@@ -36,7 +36,7 @@ export default function Home() {
           <div className="pointer-events-none absolute -inset-5 rounded-[3rem] bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-transparent blur-2xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-b from-[#27486e]/80 to-[#101d33] p-3 shadow-2xl backdrop-blur-2xl">
             <div className="relative overflow-hidden rounded-[1.45rem] bg-gradient-to-b from-[#dbe7f4] to-[#a9c1dc]">
-              <img src="/sherif-portrait.svg" alt="Sherif Mohamed — IT and Digital Transformation Leader" className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
+              <img src="/sherif-portrait-web.jpg" alt="Sherif Mohamed — IT and Digital Transformation Leader" className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
             </div>
             <div className="absolute inset-x-3 bottom-3 rounded-b-[1.45rem] bg-gradient-to-t from-[#0b1528]/95 via-[#0b1528]/55 to-transparent px-5 pb-5 pt-16">
               <p className="font-semibold text-white">Sherif Mohamed</p>
