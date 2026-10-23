@@ -32,17 +32,13 @@ export default function Home() {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">An IT and digital transformation leader with 13+ years of experience across Egypt and Saudi Arabia. I connect enterprise technology, operational excellence and people leadership to measurable business outcomes.</p>
           <div className="mt-9 flex flex-wrap gap-3"><Link to="/projects" className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-500">Explore my work <ArrowRight size={18}/></Link><Link to="/career" className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur-xl transition hover:bg-white/10"><BriefcaseBusiness size={18}/> My career</Link></div>
         </motion.div>
-        <motion.div initial={{opacity:0,scale:.95}} animate={{opacity:1,scale:1}} transition={{delay:.2,duration:.7}} className="relative mx-auto w-full max-w-[390px] lg:max-w-none">
-          <div className="pointer-events-none absolute -inset-5 rounded-[3rem] bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-transparent blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-b from-[#27486e]/80 to-[#101d33] p-3 shadow-2xl backdrop-blur-2xl">
-            <div className="relative overflow-hidden rounded-[1.45rem] bg-gradient-to-b from-[#dbe7f4] to-[#a9c1dc]">
-              <img src="https://raw.githubusercontent.com/sherifhassan21/Portfolio/main/Sherif%20Mohamed.jpg" alt="Sherif Mohamed — IT and Digital Transformation Leader" className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
-            </div>
-            <div className="absolute inset-x-3 bottom-3 rounded-b-[1.45rem] bg-gradient-to-t from-[#0b1528]/95 via-[#0b1528]/55 to-transparent px-5 pb-5 pt-16">
-              <p className="font-semibold text-white">Sherif Mohamed</p>
-              <p className="mt-1 text-xs text-blue-100">IT Operations & Digital Transformation Leader</p>
-            </div>
-          </div>
+        <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{delay:.2,duration:.7}} className="relative mx-auto w-full max-w-[390px] self-end lg:max-w-[460px]">
+          <img
+            src="https://raw.githubusercontent.com/sherifhassan21/Portfolio/main/sherifmohamed.png"
+            alt="Sherif Mohamed"
+            className="block h-auto w-full object-contain"
+            fetchPriority="high"
+          />
         </motion.div>
       </div>
       <div className="mx-auto mt-20 grid max-w-7xl grid-cols-2 gap-4 lg:grid-cols-4">{stats.map((s,i)=><motion.div key={s.label} initial={{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.1}} className="rounded-2xl border border-white/10 bg-white/[.05] p-5 backdrop-blur-xl md:p-6"><p className="text-2xl font-bold text-white sm:text-3xl">{s.value}</p><p className="mt-3 text-sm text-slate-400">{s.label}</p></motion.div>)}</div>
