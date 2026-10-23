@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
-import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Compass, Users, Cpu, TrendingUp, Mail } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Compass, Users, TrendingUp, Mail } from 'lucide-react'
 import { projects } from '../data/portfolioProjects'
 import { CareerTimeline } from './Career'
 
