@@ -32,11 +32,16 @@ export default function Home() {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">An IT and digital transformation leader with 13+ years of experience across Egypt and Saudi Arabia. I connect enterprise technology, operational excellence and people leadership to measurable business outcomes.</p>
           <div className="mt-9 flex flex-wrap gap-3"><Link to="/projects" className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-500">Explore my work <ArrowRight size={18}/></Link><Link to="/career" className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur-xl transition hover:bg-white/10"><BriefcaseBusiness size={18}/> My career</Link></div>
         </motion.div>
-        <motion.div initial={{opacity:0,scale:.95}} animate={{opacity:1,scale:1}} transition={{delay:.2,duration:.7}} className="relative hidden lg:block">
-          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-blue-500/20 to-cyan-400/10 blur-xl"/>
-          <div className="relative rounded-[2rem] border border-white/15 bg-white/[.07] p-8 shadow-2xl backdrop-blur-2xl">
-            <div className="mb-8 flex items-center gap-3"><div className="rounded-2xl bg-blue-500/20 p-4"><Cpu size={32} className="text-blue-300"/></div><div><p className="font-semibold text-white">Technology × Business</p><p className="text-sm text-slate-400">Leadership in action</p></div></div>
-            <div className="space-y-4">{['Enterprise infrastructure','Business process transformation','IT strategy & governance','Team development'].map((v,i)=><motion.div key={v} initial={{width:0}} animate={{width:'100%'}} transition={{delay:.5+i*.12,duration:.5}} className="overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 text-sm font-medium text-slate-200">{v}</motion.div>)}</div>
+        <motion.div initial={{opacity:0,scale:.95}} animate={{opacity:1,scale:1}} transition={{delay:.2,duration:.7}} className="relative mx-auto w-full max-w-[390px] lg:max-w-none">
+          <div className="pointer-events-none absolute -inset-5 rounded-[3rem] bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-transparent blur-2xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-b from-[#27486e]/80 to-[#101d33] p-3 shadow-2xl backdrop-blur-2xl">
+            <div className="relative overflow-hidden rounded-[1.45rem] bg-gradient-to-b from-[#dbe7f4] to-[#a9c1dc]">
+              <img src="/sherif-portrait-web.jpg" alt="Sherif Mohamed — IT and Digital Transformation Leader" className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
+            </div>
+            <div className="absolute inset-x-3 bottom-3 rounded-b-[1.45rem] bg-gradient-to-t from-[#0b1528]/95 via-[#0b1528]/55 to-transparent px-5 pb-5 pt-16">
+              <p className="font-semibold text-white">Sherif Mohamed</p>
+              <p className="mt-1 text-xs text-blue-100">IT Operations & Digital Transformation Leader</p>
+            </div>
           </div>
         </motion.div>
       </div>
