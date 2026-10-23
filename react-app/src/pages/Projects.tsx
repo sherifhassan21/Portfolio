@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowUpRight, Search, FolderKanban } from 'lucide-react'
+import { motion } from 'motion/react'
 import { projects } from '../data/portfolioProjects'
 
 export default function Projects() {
@@ -23,17 +24,17 @@ export default function Projects() {
       <select aria-label="Filter projects by category" value={category} onChange={e=>setCategory(e.target.value)} className="max-w-full rounded-xl border border-white/15 bg-[#15223a] px-4 py-3 text-white md:max-w-sm">{categories.map(c=><option key={c}>{c}</option>)}</select>
     </div>
     <p className="mt-5 text-sm text-slate-400">{filtered.length} projects</p>
-    <div className="mt-5 grid gap-6 md:grid-cols-2 xl:grid-cols-3">{filtered.map(p=><Link to={`/projects/${p.slug}`} key={p.id} className="group flex overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:-translate-y-1 hover:border-blue-400/60">
-      <article className="flex w-full flex-col">
-        <div className="flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-[#203b65] to-[#0c162b]">{p.image ? <img src={p.image} alt={`Illustration for ${p.title}`} loading="lazy" className="h-full w-full object-cover object-top" /> : <FolderKanban size={48} className="text-blue-300"/>}</div>
-        <div className="flex flex-1 flex-col p-6">
+    <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">{filtered.map(p=><Link to={`/projects/${p.slug}`} key={p.id} className="group flex overflow-hidden rounded-3xl border border-white/10 bg-white/[.045] shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-blue-400/60 hover:bg-white/[.08]">
+      <motion.article initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.12}} transition={{duration:.4}} className="flex w-full flex-col">
+        <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-gradient-to-br from-[#203b65] to-[#0c162b]">{p.image ? <img src={p.image} alt={`Illustration for ${p.title}`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" /> : <FolderKanban size={48} className="text-blue-300"/>}</div>
+        <div className="flex flex-1 flex-col p-6"><div className="mb-2 text-xs text-slate-500">{p.id}</div>
           <span className="text-xs font-semibold uppercase tracking-wide text-blue-400">{p.category}</span>
           <h2 className="mt-3 text-xl font-semibold text-white">{p.title}</h2>
           <p className="mt-2 text-sm text-slate-400">{p.company}</p>
           <p className="mt-4 flex-1 text-sm leading-6 text-slate-300">{p.summary}</p>
           <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-300">View project <ArrowUpRight size={17}/></span>
         </div>
-      </article>
+      </motion.article>
     </Link>)}</div>
     {!filtered.length && <p className="py-14 text-center text-slate-300">No projects match your search.</p>}
   </section>
