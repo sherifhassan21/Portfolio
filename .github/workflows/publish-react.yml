@@ -50,6 +50,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No website output changes"
           else
-            git commit -m "Deploy React portfolio static output [skip ci]"
+            git commit -m "Deploy React portfolio static output"
             git push origin HEAD:main
           fi
