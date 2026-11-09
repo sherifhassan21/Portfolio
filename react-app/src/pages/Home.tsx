@@ -7,7 +7,7 @@ import { CareerTimeline } from './Career'
 const stats = [
   { value: '13+', label: 'Years in IT & operations' },
   { value: 'SAR 120K+', label: 'Annual telecom savings' },
-  { value: '60%', label: 'Less manual ERP work' },
+  { value: '85%', label: 'Less manual ERP work' },
   { value: '57%', label: 'Faster retail IT deployments' },
 ]
 const focus = [
