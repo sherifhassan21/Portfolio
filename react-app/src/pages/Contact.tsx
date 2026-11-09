@@ -1,8 +1,8 @@
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { ArrowUpRight, Code2, BriefcaseBusiness, Mail, MapPin } from 'lucide-react'
 
 const links=[
-{label:'LinkedIn',value:'Connect professionally',href:'https://www.linkedin.com/in/sherifhassanm',icon:Linkedin},
-{label:'GitHub',value:'Explore code and repositories',href:'https://github.com/sherifhassan21',icon:Github},
+{label:'LinkedIn',value:'Connect professionally',href:'https://www.linkedin.com/in/sherifhassanm',icon:BriefcaseBusiness},
+{label:'GitHub',value:'Explore code and repositories',href:'https://github.com/sherifhassan21',icon:Code2},
 {label:'Email',value:'Send an email',href:'mailto:sherifhassan21@gmail.com',icon:Mail},
 ]
 export default function Contact(){
